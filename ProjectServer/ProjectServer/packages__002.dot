@@ -1,0 +1,7 @@
+digraph "packages__002" {
+charset="utf-8"
+rankdir=BT
+"0" [label="models", shape="box"];
+"1" [label="models.account", shape="box"];
+"2" [label="models.report", shape="box"];
+}

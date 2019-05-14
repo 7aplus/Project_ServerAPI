@@ -1,0 +1,11 @@
+digraph "classes__002" {
+charset="utf-8"
+rankdir=BT
+"0" [label="{flask_sqlalchemy.model.Model|query : NoneType\lquery_class : NoneType\l|}", shape="record"];
+"1" [label="{models.account.AcountEmployee|empliye_password\lemploy_email\lemploy_name\lid\l|}", shape="record"];
+"2" [label="{models.account.AcountUser|id\luser_email\luser_firstName\luser_lastName\luser_name\luser_password\luser_phone\l|}", shape="record"];
+"3" [label="{models.report.Reports|create_time\lemployee_feedback\lemployee_id\lid\llost_location\llost_time\lreport_describe\luser_id\luser_status\l|}", shape="record"];
+"1" -> "0" [arrowhead="empty", arrowtail="none"];
+"2" -> "0" [arrowhead="empty", arrowtail="none"];
+"3" -> "0" [arrowhead="empty", arrowtail="none"];
+}

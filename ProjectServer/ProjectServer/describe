@@ -1,0 +1,129 @@
+__init__ db:
+python manage.py db init
+python manager.py db migrate
+python manage.py db upgrade
+
+127.0.0.1:5000/account/register
+POST
+JSON{
+    "name": "testname1",
+    "password": "1234567",
+    "email": "test1@qq.com",
+    "phone": "1234567"
+}
+return:
+{'status_code': 100100}: register  fail
+{'status_code': 100110} : name exists
+{'status_code': 100111} : register success
+
+127.0.0.1:5000/account/login
+{
+    "type": "customer",// customer or employee
+    "name": "testname1",
+	"password": "1234567"
+}
+return:
+{'status_code': 100200}: login fail
+{'status_code': 100210}: login wrong name
+{'status_code': 100220} : login wrong password
+{'status_code': 100211}: login success
+
+
+127.0.0.1:5000/report/get_all_report
+{
+       "type":"manager"
+}
+return {
+"reports": [
+        {
+            "firstName": "111F",
+            "lastName": "111S",
+            "order": 1,
+            "status": -1,
+            "userName": "user_name1"
+        },
+        {
+            "firstName": "222F",
+            "lastName": "222S",
+            "order": 2,
+            "status": 0,
+            "userName": "user_name2"
+        },
+        {
+            "firstName": "333F",
+            "lastName": "333S",
+            "order": 3,
+            "status": 1,
+            "userName": "user_name3"
+        },
+        {
+            "firstName": "111F",
+            "lastName": "111S",
+            "order": 4,
+            "status": 0,
+            "userName": "user_name1"
+        },
+        {
+            "firstName": "222F",
+            "lastName": "222S",
+            "order": 5,
+            "status": 0,
+            "userName": "user_name2"
+        },
+        {
+            "firstName": "333F",
+            "lastName": "333S",
+            "order": 1001,
+            "status": 0,
+            "userName": "user_name3"
+        },
+        {
+            "firstName": "111F",
+            "lastName": "111S",
+            "order": 1002,
+            "status": 0,
+            "userName": "user_name1"
+        }
+    ],
+    "status_code": "success"
+    }: login success
+
+    127.0.0.1:5000/report/create_report
+    {
+        "username"
+        "location"
+        "time"
+        "message" #detial
+    }
+    {"status_code": "success"}
+
+
+
+
+     127.0.0.1:5000/report/get_someone_report
+     {
+     "username"
+     }
+     {
+    "reports": [
+        {
+            "feedback": "No location",
+            "orderId": 1,
+            "status": -1,
+            "time": "Sat, 06 Apr 2019 15:17:26 GMT"
+        },
+        {
+            "feedback": null,
+            "orderId": 4,
+            "status": 0,
+            "time": "Tue, 09 Apr 2019 13:57:09 GMT"
+        },
+        {
+            "feedback": null,
+            "orderId": 1002,
+            "status": 0,
+            "time": "Wed, 10 Apr 2019 08:17:03 GMT"
+        }
+    ],
+    "status_code": "success"
+}
